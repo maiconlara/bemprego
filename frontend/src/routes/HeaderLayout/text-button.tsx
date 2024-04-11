@@ -2,7 +2,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 interface TextButtonProps {
   text: string;
-  link: string;
+  link?: string;
   isActive?: boolean;
 }
 
@@ -17,7 +17,7 @@ const TextButton = ({ text, link }: TextButtonProps) => {
       className={`font-nunito  cursor-pointer hover:text-ribbon-600 transition-colors select-none ${
         isActive ? "text-ribbon-600" : "text-black"
       } transition-colors select-none`}
-      onClick={() => navigate(`/${link}`)}
+      onClick={link ? () => navigate(`/${link}`) : () => {}}
     >
       {text}
     </p>

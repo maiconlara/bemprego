@@ -6,4 +6,9 @@
 html,
 body {
   scroll-behavior: smooth !important;
+  list-style-type: none;
+
 }
+
+
+

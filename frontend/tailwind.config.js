@@ -36,6 +36,7 @@ module.exports = {
         nunito: ["Nunito", "sans-serif"],
       },
       colors: {
+        divider: "#d2d2d2",
         ribbon: {
           50: "#eff4ff",
           100: "#dbe6fe",

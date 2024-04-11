@@ -8,6 +8,7 @@ const HeaderLayout = () => {
   return (
     <div className="flex flex-col relative max-w-[100vw] w-full min-h-[100vh] overflow-hidden justify-start items-center font-nunito">
       {isDesktop && <Header />}
+
       <Outlet />
     </div>
   );

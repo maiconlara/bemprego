@@ -62,7 +62,7 @@ const Header = () => {
         </NavigationMenu>
       </div>
       <button className="hidden lg:flex rounded-full font-semibold text-white py-2 px-6 bg-ribbon-600 hover:bg-ribbon-700 transition-colors ">
-        Quero Emprego
+        Buscar Empregos
       </button>
     </div>
   );

@@ -1,6 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Error from "../pages/error";
-import Home from "../pages/home";
+import Home from "../pages/landing-page";
 import HeaderLayout from "./HeaderLayout";
 
 const Root = () => {

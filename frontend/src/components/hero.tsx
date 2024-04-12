@@ -3,7 +3,7 @@ import { StarFilledIcon } from "@radix-ui/react-icons";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col items-start justify-start w-[90vw] xl:w-[78vw] h-screen ">
+    <div className="flex flex-col items-start justify-start w-[90vw] xl:w-[78vw] h-full ">
       <div className="flex flex-row w-full items-center justify-center pt-24">
         <div className="flex flex-col w-full h-full items-start justify-start gap-6 mt-10">
           <div className="flex flex-row items-center justify-between px-6 w-[360px] h-10 bg-ribbon-100 rounded-full border border-ribbon-600">

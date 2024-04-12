@@ -35,7 +35,9 @@ const adminOptions = [
 
 const Header = () => {
   return (
-    <div className="flex max-w-full max-h-[100px] min-h-[100px] shadow w-full h-full sticky top-0 left-0 justify-between px-28 items-center transition-colors">
+    <div className="flex max-w-full max-h-[100px] min-h-[100px] shadow w-full h-full sticky top-0 left-0 justify-center items-center transition-colors">
+     <div className="flex flex-row items-center justify-between w-[90vw] xl:w-[78vw]">
+
       <div className="flex flex-row h-full items-center justify-center gap-12">
         <img src={logo} alt="logo" className="w-32 h-32 mr-10" />
         {headerButtons.map((item, index) => {
@@ -61,9 +63,11 @@ const Header = () => {
           </NavigationMenuItem>
         </NavigationMenu>
       </div>
-      <button className="hidden lg:flex rounded-full font-semibold text-white py-2 px-6 bg-ribbon-600 hover:bg-ribbon-700 transition-colors ">
+      <button className="flex rounded-full font-semibold text-white py-2 px-6 max-w-[176px] bg-ribbon-600 hover:bg-ribbon-700 transition-colors ">
         Buscar Empregos
       </button>
+      </div>
+  
     </div>
   );
 };

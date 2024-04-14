@@ -3,7 +3,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay"
+import Autoplay from "embla-carousel-autoplay";
 import microsoft from "@/assets/microsoft-logo.svg";
 import amazon from "@/assets/amazon-logo.svg";
 import prisma from "@/assets/prisma-logo.svg";
@@ -42,7 +42,7 @@ const rotativeBannerItems = [
 const RotativeBanner = () => {
   return (
     <Carousel
-    plugins={[
+      plugins={[
         Autoplay({
           delay: 4000,
         }),
@@ -53,10 +53,17 @@ const RotativeBanner = () => {
       className="w-full max-w-[78vw] h-[75px] "
     >
       <CarouselContent>
-        {rotativeBannerItems.map((item)=> {
+        {rotativeBannerItems.map((item) => {
           return (
-            <CarouselItem key={item.identifier} className="lg:basis-1/3">
-              <img src={item.image} alt={item.identifier} className="w-full h-[45px]" />
+            <CarouselItem
+              key={item.identifier}
+              className=" basis-1/3 xl:basis-1/4"
+            >
+              <img
+                src={item.image}
+                alt={item.identifier}
+                className="w-full h-[45px]"
+              />
             </CarouselItem>
           );
         })}

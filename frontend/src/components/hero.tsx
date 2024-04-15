@@ -30,9 +30,11 @@ const Hero = () => {
             <button className="flex rounded-full font-semibold text-white py-2 px-6 max-w-[176px] bg-ribbon-600 hover:bg-ribbon-700 transition-colors ">
               Buscar Empregos
             </button>
-            <button className="flex rounded-full font-semibold items-center justify-center text-ribbon-950 py-2 px-6 w-full max-w-[176px] bg-transparent border border-gray-500 hover:bg-gray-200 transition-colors ">
-              Planos
-            </button>
+            <a href="/#plans" className="max-w-[176px] w-full">
+              <button className="flex rounded-full font-semibold items-center justify-center text-ribbon-950 py-2 px-6 w-full max-w-[176px] bg-transparent border border-gray-500 hover:bg-gray-200 transition-colors ">
+                Planos
+              </button>
+            </a>
           </div>
         </div>
         <div className="flex w-full items-center justify-center">

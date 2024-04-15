@@ -1,6 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import HeaderLayout from "./HeaderLayout";
 import Candidates from "@/pages/candidates";
+import Dashboard from "@/pages/dashboard";
 import Error from "../pages/error";
 import Home from "../pages/landing-page";
 
@@ -11,6 +12,7 @@ const Root = () => {
         <Route element={<HeaderLayout />}>
           <Route element={<Home />} path="/" />
           <Route element={<Candidates />} path="/candidates" />
+          <Route element={<Dashboard />} path="/dashboard" />
           <Route element={<Error />} path="*" />
         </Route>
       </Routes>

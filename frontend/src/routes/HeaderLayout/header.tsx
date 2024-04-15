@@ -16,10 +16,6 @@ const headerButtons = [
     link: "home",
   },
   {
-    text: "Sobre nós",
-    link: "about",
-  },
-  {
     text: "Planos",
     link: "plans",
   },

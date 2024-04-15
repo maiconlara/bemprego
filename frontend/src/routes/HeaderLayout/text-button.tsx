@@ -1,4 +1,3 @@
-import { useNavigate, useLocation } from "react-router-dom";
 
 interface TextButtonProps {
   text: string;
@@ -7,20 +6,14 @@ interface TextButtonProps {
 }
 
 const TextButton = ({ text, link }: TextButtonProps) => {
-  const { pathname } = useLocation();
-  const isActive = pathname === `/${link}`;
-
-  const navigate = useNavigate();
 
   return (
-    <p
-      className={`font-nunito  cursor-pointer hover:text-ribbon-600 transition-colors select-none ${
-        isActive ? "text-ribbon-600" : "text-black"
-      } transition-colors select-none`}
-      onClick={link ? () => navigate(`/${link}`) : () => {}}
+    <a
+      href={`#${link}`}
+      className="font-nunito  cursor-pointer hover:text-ribbon-600 transition-colors select-none text-black"
     >
       {text}
-    </p>
+    </a>
   );
 };
 export default TextButton;

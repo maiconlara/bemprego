@@ -3,7 +3,7 @@ import { plans } from "@/lib/plans";
 
 const Plans = () => {
   return (
-    <div className="flex flex-col w-full h-full justify-start items-center gap-6">
+    <div id="plans" className="flex flex-col w-full h-full justify-start items-center gap-6">
       <p className="text-4xl text-ribbon-800 font-bold">Planos e Preços</p>
       <p className="text-lg">Escolha o plano de sua preferencia</p>
       <div className="grid grid-cols-4 w-[90vw] xl:w-[78vw] h-full gap-6 mt-4">

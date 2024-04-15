@@ -3,7 +3,10 @@ import { StarFilledIcon } from "@radix-ui/react-icons";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col items-start justify-start w-[90vw] xl:w-[78vw] h-full ">
+    <div
+      id="home"
+      className="flex flex-col items-start justify-start w-[90vw] xl:w-[78vw] h-full "
+    >
       <div className="flex flex-row w-full items-center justify-center pt-24">
         <div className="flex flex-col w-full h-full items-start justify-start gap-6 ">
           <div className="flex flex-row items-center justify-between px-6 w-[360px] h-10 bg-ribbon-100 rounded-full border border-ribbon-600">
@@ -18,7 +21,7 @@ const Hero = () => {
             iniciar sua <span className="text-ribbon-600">jornada</span>{" "}
             profissional.
           </p>
-          <p className="max-w-[410px] xl:max-w-[500px] 2xl:max-w-[660px] text-slate-400">
+          <p className="max-w-[410px] xl:max-w-[500px] 2xl:max-w-[660px] text-gray-600">
             Descubra oportunidades para a area que esta procurando, seja recem
             formado ou graduado. Apresentamos inúmeras vagas de empresas que
             parceiras que buscam formar ótimos profissionais.
@@ -27,7 +30,7 @@ const Hero = () => {
             <button className="flex rounded-full font-semibold text-white py-2 px-6 max-w-[176px] bg-ribbon-600 hover:bg-ribbon-700 transition-colors ">
               Buscar Empregos
             </button>
-            <button className="flex rounded-full font-semibold items-center justify-center text-ribbon-950 py-2 px-6 w-full max-w-[176px] bg-transparent border border-divider hover:bg-gray-100 transition-colors ">
+            <button className="flex rounded-full font-semibold items-center justify-center text-ribbon-950 py-2 px-6 w-full max-w-[176px] bg-transparent border border-gray-500 hover:bg-gray-200 transition-colors ">
               Planos
             </button>
           </div>

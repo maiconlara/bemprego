@@ -14,11 +14,6 @@ interface CustomTooltipProps {
   payload?: Payload[];
 }
 
-/**
- * Custom tooltip for the chart.
- * @param active - If the tooltip is active.
- * @param payload - Payload of the tooltip.
- */
 const CustomTooltip = ({
   active = false,
   payload = [],

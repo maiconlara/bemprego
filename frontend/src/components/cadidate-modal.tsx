@@ -49,6 +49,7 @@ interface CreateUserModalProps {
 }
 
 const CandidateModal = ({ children }: CreateUserModalProps) => {
+  const [query, setQuery] = useState("");
   const form = useForm<z.infer<typeof createCandidateSchema>>({
     resolver: zodResolver(createCandidateSchema),
     defaultValues: {
@@ -78,7 +79,7 @@ const CandidateModal = ({ children }: CreateUserModalProps) => {
       refetch();
     },
     1500,
-    [form.getValues("postalCode")]
+    [query]
   );
 
   useEffect(() => {
@@ -184,6 +185,7 @@ const CandidateModal = ({ children }: CreateUserModalProps) => {
                     <IconInput
                       {...field}
                       autoComplete="off"
+                      onInput={(e) => setQuery((e.target as HTMLInputElement).value)}
                       maxLength={8}
                       placeholder="CEP"
                       Icon={IconLocation}

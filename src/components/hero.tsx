@@ -9,7 +9,7 @@ const Hero = () => {
       className="flex flex-col items-start justify-start w-[90vw] xl:w-[78vw] h-full "
     >
       <div className="flex flex-row w-full items-center justify-center pt-24">
-        <div className="flex flex-col w-full h-full items-start justify-start gap-6 ">
+        <div className="flex flex-col w-full h-full items-center md:items-start justify-start gap-6 ">
           <div className="flex flex-row items-center justify-between px-6 w-[300px] md:w-[360px] h-10 bg-ribbon-100 rounded-full border border-ribbon-600">
             <StarFilledIcon className="w-5 h-5 text-yellow-500" />
             <p className="text-ribbon-600 text-sm md:text-md font-bold">
@@ -41,7 +41,11 @@ const Hero = () => {
           </div>
         </div>
         <div className="flex w-full items-center justify-center">
-          <img src={deal} alt="logo" className="w-auto h-64 xl:-mt-0 xl:h-96 hidden md:flex" />
+          <img
+            src={deal}
+            alt="logo"
+            className="w-auto h-64 xl:-mt-0 xl:h-96 hidden md:flex"
+          />
         </div>
       </div>
     </div>

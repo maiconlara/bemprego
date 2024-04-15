@@ -1,30 +1,35 @@
-# React + TypeScript + Vite
+# React, Vite, TypeScript and TailwindCSS App.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <a href="https://github.com/maiconlara/nextjs-template"><img src="public/readme-banner.png" alt="banner"></a>
+</p>
 
-Currently, two official plugins are available:
+💻 A web application written in React and Vite. Contains: TypeScript, PostCSS, Tailwind CSS Shadcn/Ui, Recharts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+### Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Bemprego is a platform that connects job seekers with potential employers. It has:
 
-- Configure the top-level `parserOptions` property like this:
+- A Landing Page
+- A form to register a new candidate.
+- A candidates list.
+- A simple dashboard. 
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### Requirements
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Node.js and a Node Package Manager (use pnpm please)
+
+### Getting started
+
+Using the template:
+
+
+1. On GitHub.com, navigate to the main page of the repository.
+2. Clone the repository
+3. pnpm install
+4. pnpm run dev
+5. It should automatically open the browser at `http://localhost:5175`.
+
+
+<p align="center">Made with 🤍 by Maicon Lara</p>

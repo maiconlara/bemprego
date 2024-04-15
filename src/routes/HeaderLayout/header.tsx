@@ -27,6 +27,11 @@ const adminOptions = [
     description: "Acesse seu dashboard",
     link: "dashboard",
   },
+  {
+    text: "Candidatos",
+    description: "Vejas os candidatos",
+    link: "candidates",
+  },
 ];
 
 const Header = () => {

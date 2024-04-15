@@ -57,7 +57,7 @@ const RotativeBanner = () => {
           return (
             <CarouselItem
               key={item.identifier}
-              className=" basis-1/3 xl:basis-1/4"
+              className=" sm:basis-1/2 md:basis-1/3 xl:basis-1/4"
             >
               <img
                 src={item.image}

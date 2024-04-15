@@ -29,7 +29,7 @@ const Hero = () => {
           </p>
           <div className="flex flex-row gap-4 w-full">
             <CandidateModal>
-              <button className="flex rounded-full font-semibold text-white py-2 px-6 max-w-[176px] bg-ribbon-600 hover:bg-ribbon-700 transition-colors ">
+              <button className="flex rounded-full font-semibold items-center justify-center text-white py-2 w-full max-w-[176px] bg-ribbon-600 hover:bg-ribbon-700 transition-colors ">
                 Buscar Empregos
               </button>
             </CandidateModal>

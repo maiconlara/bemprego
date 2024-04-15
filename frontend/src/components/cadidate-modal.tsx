@@ -34,13 +34,16 @@ import {
 import { createCandidateSchema } from "@/utils/validations/createCandidateSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { IconInput } from "@/components/ui/icon-input";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
+import { InputMask } from "@react-input/mask";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import { z } from "zod";
-import { jobs } from "@/lib/jobs";
 import { plans } from "@/lib/plans";
-
+import { jobs } from "@/lib/jobs";
+import { z } from "zod";
+import { MaskedInput } from "@/components/ui/masked-input";
+import { useGetAddress } from "@/utils/hooks/useGetAddress";
+import useDebounce from "@/utils/hooks/useDebouce";
 interface CreateUserModalProps {
   children: ReactNode;
 }
@@ -62,9 +65,28 @@ const CandidateModal = ({ children }: CreateUserModalProps) => {
     },
   });
 
+  const { data, refetch, isLoading } = useGetAddress(
+    form.getValues("postalCode")
+  );
+
   function onSubmit(data: z.infer<typeof createCandidateSchema>) {
     console.log(data);
   }
+
+  useDebounce(
+    () => {
+      refetch();
+    },
+    1500,
+    [form.getValues("postalCode")]
+  );
+
+  useEffect(() => {
+    if (data) {
+      form.setValue("state", data.state);
+      form.setValue("city", data.city);
+    }
+  }, [data, form]);
 
   return (
     <Dialog>
@@ -121,10 +143,14 @@ const CandidateModal = ({ children }: CreateUserModalProps) => {
               render={({ field }) => (
                 <FormItem className="col-span-1 ">
                   <FormControl>
-                    <IconInput
+                    <MaskedInput
                       {...field}
                       placeholder="Telefone"
                       Icon={IconPhone}
+                      maskInput={{
+                        input: InputMask,
+                        mask: "+55 (__) _____-____",
+                      }}
                     />
                   </FormControl>
                   <FormMessage />
@@ -138,10 +164,11 @@ const CandidateModal = ({ children }: CreateUserModalProps) => {
               render={({ field }) => (
                 <FormItem className="col-span-1 ">
                   <FormControl>
-                    <IconInput
+                    <MaskedInput
                       {...field}
                       placeholder="Nascimento"
                       Icon={IconCalendar}
+                      maskInput={{ input: InputMask, mask: "__/__/____" }}
                     />
                   </FormControl>
                   <FormMessage />
@@ -156,6 +183,8 @@ const CandidateModal = ({ children }: CreateUserModalProps) => {
                   <FormControl>
                     <IconInput
                       {...field}
+                      autoComplete="off"
+                      maxLength={8}
                       placeholder="CEP"
                       Icon={IconLocation}
                     />

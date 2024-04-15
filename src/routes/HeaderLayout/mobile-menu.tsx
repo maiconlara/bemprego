@@ -43,7 +43,7 @@ const MobileMenu = () => {
     >
       {isHome && (
         <>
-          <span className="pl-4 text-xs font-bold uppercase text-tertiary">
+          <span className="pl-4 text-xs font-bold uppercase text-ribbon-950">
             menu geral
           </span>
           <div className="flex w-full flex-col items-start">
@@ -53,7 +53,7 @@ const MobileMenu = () => {
           </div>
         </>
       )}
-      <span className="pl-4 text-xs font-bold uppercase text-tertiary pt-4">
+      <span className="pl-4 text-xs font-bold uppercase text-ribbon-950 pt-4">
         admin
       </span>
       <div className="flex w-full flex-col items-start">

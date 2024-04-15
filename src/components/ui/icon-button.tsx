@@ -17,7 +17,7 @@ export const IconButton = ({
     handleButtonClick,
 }: IconButtonProps) => {
     return (
-        <button
+        <div
             className="
                 relative
                 flex
@@ -46,6 +46,6 @@ export const IconButton = ({
                 <Icon className="h-5 w-5 text-ribbon-900" />
                
             </div>
-        </button>
+        </div>
     );
 };

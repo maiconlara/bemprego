@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/navigation-menu";
 
 import ListItem from "./list-item";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import CandidateModal from "@/components/cadidate-modal";
 
 const headerButtons = [
@@ -36,7 +36,8 @@ const adminOptions = [
 
 const Header = () => {
   const navigate = useNavigate();
-
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
   return (
     <div className="flex max-w-full max-h-[100px] min-h-[100px] shadow w-full h-full sticky top-0 left-0 justify-center items-center transition-colors">
       <div className="flex flex-row items-center justify-between w-[90vw] xl:w-[78vw]">
@@ -49,9 +50,12 @@ const Header = () => {
             alt="logo"
             className="w-32 h-32 mr-10 cursor-pointer"
           />
-          {headerButtons.map((item, index) => {
-            return <TextButton key={index} text={item.text} link={item.link} />;
-          })}
+          {isHome &&
+            headerButtons.map((item, index) => {
+              return (
+                <TextButton key={index} text={item.text} link={item.link} />
+              );
+            })}
           <NavigationMenu>
             <NavigationMenuItem>
               <NavigationMenuTrigger>
@@ -72,11 +76,13 @@ const Header = () => {
             </NavigationMenuItem>
           </NavigationMenu>
         </div>
-        <CandidateModal>
-          <button className="flex rounded-full font-semibold text-white py-2 px-6 max-w-[176px] bg-ribbon-600 hover:bg-ribbon-700 transition-colors ">
-            Buscar Empregos
-          </button>
-        </CandidateModal>
+        {isHome && (
+          <CandidateModal>
+            <button className="flex rounded-full font-semibold text-white py-2 px-6 max-w-[176px] bg-ribbon-600 hover:bg-ribbon-700 transition-colors ">
+              Buscar Empregos
+            </button>
+          </CandidateModal>
+        )}
       </div>
     </div>
   );

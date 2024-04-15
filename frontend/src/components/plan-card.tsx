@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Feature } from "@/lib/plans";
+import CandidateModal from "./cadidate-modal";
 
 interface PlanCardProps {
   title: string;
@@ -52,9 +53,11 @@ const PlanCard = ({ title, price, description, features }: PlanCardProps) => {
         </div>
       </CardContent>
       <CardFooter className="">
-        <button className="flex rounded-full font-semibold items-center justify-center text-white py-2 px-6 w-full bg-ribbon-600 hover:bg-ribbon-700 transition-colors ">
-          Buscar vagas
-        </button>
+        <CandidateModal selectedPlan={title}>
+          <button className="flex rounded-full font-semibold items-center justify-center text-white py-2 px-6 w-full bg-ribbon-600 hover:bg-ribbon-700 transition-colors ">
+            Buscar vagas
+          </button>
+        </CandidateModal>
       </CardFooter>
     </Card>
   );

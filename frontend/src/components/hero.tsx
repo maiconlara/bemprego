@@ -1,5 +1,6 @@
 import deal from "@/assets/deal.svg";
 import { StarFilledIcon } from "@radix-ui/react-icons";
+import CandidateModal from "./cadidate-modal";
 
 const Hero = () => {
   return (
@@ -27,9 +28,11 @@ const Hero = () => {
             parceiras que buscam formar ótimos profissionais.
           </p>
           <div className="flex flex-row gap-4 w-full">
-            <button className="flex rounded-full font-semibold text-white py-2 px-6 max-w-[176px] bg-ribbon-600 hover:bg-ribbon-700 transition-colors ">
-              Buscar Empregos
-            </button>
+            <CandidateModal>
+              <button className="flex rounded-full font-semibold text-white py-2 px-6 max-w-[176px] bg-ribbon-600 hover:bg-ribbon-700 transition-colors ">
+                Buscar Empregos
+              </button>
+            </CandidateModal>
             <a href="/#plans" className="max-w-[176px] w-full">
               <button className="flex rounded-full font-semibold items-center justify-center text-ribbon-950 py-2 px-6 w-full max-w-[176px] bg-transparent border border-gray-500 hover:bg-gray-200 transition-colors ">
                 Planos

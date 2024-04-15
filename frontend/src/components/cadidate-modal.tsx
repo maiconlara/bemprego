@@ -46,9 +46,10 @@ import { useGetAddress } from "@/utils/hooks/useGetAddress";
 import useDebounce from "@/utils/hooks/useDebouce";
 interface CreateUserModalProps {
   children: ReactNode;
+  selectedPlan?: string;
 }
 
-const CandidateModal = ({ children }: CreateUserModalProps) => {
+const CandidateModal = ({ children, selectedPlan }: CreateUserModalProps) => {
   const [query, setQuery] = useState("");
   const form = useForm<z.infer<typeof createCandidateSchema>>({
     resolver: zodResolver(createCandidateSchema),
@@ -81,6 +82,12 @@ const CandidateModal = ({ children }: CreateUserModalProps) => {
     1500,
     [query]
   );
+
+  useEffect(() => {
+    if (selectedPlan) {
+      form.setValue("plan", selectedPlan);
+    }
+  }, []);
 
   useEffect(() => {
     if (data) {
@@ -185,7 +192,9 @@ const CandidateModal = ({ children }: CreateUserModalProps) => {
                     <IconInput
                       {...field}
                       autoComplete="off"
-                      onInput={(e) => setQuery((e.target as HTMLInputElement).value)}
+                      onInput={(e) =>
+                        setQuery((e.target as HTMLInputElement).value)
+                      }
                       maxLength={8}
                       placeholder="CEP"
                       Icon={IconLocation}
@@ -237,6 +246,7 @@ const CandidateModal = ({ children }: CreateUserModalProps) => {
                 <FormItem className="col-span-1 ">
                   <FormControl>
                     <Select
+                      value={field.value}
                       onValueChange={(value) => {
                         form.setValue("plan", value);
                       }}

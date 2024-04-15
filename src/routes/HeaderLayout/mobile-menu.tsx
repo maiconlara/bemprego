@@ -29,7 +29,7 @@ const adminItems: NavButtonProps[] = [
   {
     label: "Candidatos",
     icon: IconUsers,
-    link: "home",
+    link: "candidates",
   },
 ];
 

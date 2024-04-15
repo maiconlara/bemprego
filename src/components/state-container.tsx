@@ -24,8 +24,8 @@ const StateContainer = ({ data }: StateContainerProps) => {
 
 
   return (
-    <div className="flex flex-col col-span-1 relative w-full h-[500px] items-center justify-between pb-6 rounded-3xl border border-divider">
-      <p className="w-full text-center">Estado dos candidatos</p>
+    <div className="flex flex-col col-span-2 row-span-1 relative w-full h-[300px] items-center justify-between pb-6 rounded-3xl border border-divider">
+      <p className="w-full text-center uppercase font-bold tracking-tighter">Estado dos candidatos</p>
       <StateGraph data={formattedData} />
     </div>
   );

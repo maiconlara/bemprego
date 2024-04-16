@@ -10,15 +10,22 @@ interface StateContainerProps {
 }
 
 
+const randomColor = () => {
+  const color = Math.floor(Math.random()*16777215).toString(16);
+  return `#${color}`
+}	
+
 
 const CityContainer = ({ data }: StateContainerProps) => {
 
     const formattedData = data
     .slice(0, 5)
     .map((item) => {
-        const name = item.city
+        const label = item.city
         const value = item.count;
-        return { name, value };
+        const id = item.city;
+        const color = randomColor();
+        return { id, label, value, color };
     })
     .sort((a, b) => b.value - a.value);
 
